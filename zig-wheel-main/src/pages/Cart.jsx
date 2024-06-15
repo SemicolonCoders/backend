@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { storeContext } from '../context/storeContext';
 
 const Cart = () => {
-  const { cartItems, setCartItems, removeFromCart } = useContext(storeContext);
+  const { emptyCart, cartItems, setCartItems, removeFromCart } = useContext(storeContext);
   const navigate = useNavigate();
 
   const [showCheckoutForm, setShowCheckoutForm] = useState(false);
@@ -55,7 +55,8 @@ const Cart = () => {
     // For demonstration, we'll just set a timeout to simulate processing
     setTimeout(() => {
       toggleConfirmation(); // Show confirmation popup
-      setCartItems([]); // Empty the cart (remove all items)
+      // setCartItems([]); // Empty the cart (remove all items)
+      emptyCart();
       toggleCheckoutForm(); // Hide checkout form
     }, 2000); // Simulating a delay for processing
   };

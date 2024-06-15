@@ -36,7 +36,13 @@ const StoreProvider = ({ children }) => {
     });
   };
 
-  // Function to remove an item from the cart
+  const emptyCart =() =>{
+   setCartItems([]);
+
+  }
+
+  
+     // Function to remove an item from the cart
   const removeFromCart = (id) => {
     setCartItems((prevItems) =>
       // Filter out the item with the given id
@@ -46,7 +52,7 @@ const StoreProvider = ({ children }) => {
 
   return (
     // Provide cartItems, addToCart, and removeFromCart functions to the context
-    <storeContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
+    <storeContext.Provider value={{ emptyCart, cartItems, addToCart, removeFromCart }}>
       {children}
     </storeContext.Provider>
   );
