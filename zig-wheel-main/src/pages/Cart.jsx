@@ -207,6 +207,37 @@ const Cart = () => {
                   required
                 />
               </div>
+
+                {/* Payment method selection */}
+        <div className="mb-4">
+          <label htmlFor="paymentMethod" className="block text-gray-700 font-bold mb-2">
+            Payment Method
+          </label>
+          <select
+            id="paymentMethod"
+            name="paymentMethod"
+            value={formData.paymentMethod}
+            onChange={handleInputChange}
+            className="w-full px-3 py-2 border rounded-lg"
+            required
+          >
+            <option value="Credit Card">Credit Card</option>
+            <option value="Debit Card">Debit Card</option>
+            <option value="PayPal">PayPal</option>
+            {/* Add other payment options as needed */}
+          </select>
+        </div>
+        
+        <div className="flex justify-between"></div>
+         {/* Cancel button */}
+         <button
+            type="button"
+            onClick={toggleCheckoutForm}
+            className="bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-gray-300"
+          >
+            Cancel
+          </button>
+          {/* Submit button */}
               <div className="flex justify-end">
                 <button
                   type="submit"
